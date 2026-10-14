@@ -3,66 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#151311">
-<title>Weekend Quest</title>
+<meta name="theme-color" content="#fff8f4">
+<title>A Weekend Together? ♡</title>
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=IM+Fell+English:ital@0;1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap');
+:root{--ink:#59372f;--muted:#98776d;--rose:#df8d91;--cream:#fff8f3;--line:#f1dcd5}
 *{box-sizing:border-box}
-:root{--ink:#25170c;--gold:#e7bf65;--red:#6e0808}
-html,body{margin:0;min-height:100%;background:#100e0c}
-body{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:8px;background:radial-gradient(ellipse at center,#3b3024,#100e0c 76%);font-family:"IM Fell English",Georgia,"Times New Roman",serif}
-.game-window{position:relative;width:min(94vw,calc((100svh - 16px)*.6667));aspect-ratio:2/3;background:url("quest-frame.png") center/100% 100% no-repeat;filter:drop-shadow(0 10px 22px #000b)}
-.npc-name{position:absolute;top:1.75%;left:23%;width:57%;height:3.4%;display:flex;align-items:center;justify-content:center;color:#ddd0b6;font:600 clamp(9px,2.5vw,13px) "Cinzel",Georgia,serif;text-shadow:0 1px 2px #000;white-space:nowrap;overflow:hidden}
-.title{position:absolute;top:7.3%;left:7.7%;width:84%;height:5.3%;display:flex;align-items:center;justify-content:center;color:#f0c96e;font:800 clamp(12px,3.7vw,19px) "Cinzel",Georgia,serif;text-shadow:1px 2px 1px #281508;text-align:center}
-.paper-content{position:absolute;top:14.6%;left:7.8%;width:83.6%;height:76.7%;padding:1.5% 2.5% 1%;color:var(--ink);overflow:auto;scrollbar-width:thin;scrollbar-color:#82623c transparent}
-h1{font:800 clamp(17px,4.5vw,24px)/1.1 "Cinzel",Georgia,serif;text-transform:uppercase;letter-spacing:.02em;margin:0 0 2.2%;color:#38200e}
-.subtitle{font-style:italic;font-size:clamp(10px,2.7vw,13px);margin:0 0 4%}
-p{font-size:clamp(11px,3vw,15px);line-height:1.25;margin:0 0 3.2%}
-.section-title{font:800 clamp(13px,3.5vw,17px) "Cinzel",Georgia,serif;text-transform:uppercase;margin:3.5% 0 1.5%;color:#42230d}
-.reward{display:flex;align-items:center;gap:8px;font-size:clamp(10px,2.7vw,13px);margin:1.5% 0 2.5%}
-.reward-icon{width:35px;height:35px;flex:0 0 35px;display:grid;place-items:center;background:linear-gradient(135deg,#3a2450,#130e1a);border:2px ridge #b9974d;border-radius:3px;font-size:21px;box-shadow:0 1px 2px #38220c}
-.reward b{display:block}
-.option{display:flex;align-items:center;gap:8px;width:100%;min-height:38px;padding:5px 7px;margin:5px 0;border:1px solid #8b5b24;border-radius:3px;text-align:left;color:#f3d991;background:linear-gradient(#40372d,#171615 70%);box-shadow:inset 0 1px #8e7857,0 1px 2px #563817;cursor:pointer}
-.option.alt{background:linear-gradient(#303946,#141a23 70%)}
-.option.selected{outline:2px solid #f1ca68;box-shadow:0 0 0 1px #58380f,inset 0 0 9px #d5a44266}
-.option:focus-visible{outline:2px solid #fff0a7}
-.option .icon{font-size:22px;flex:0 0 25px;text-align:center}
-.option b{display:block;font-size:clamp(12px,3.4vw,16px);line-height:1.05}
-.option small{display:block;color:#e2d5bd;font-size:clamp(9px,2.4vw,11px);margin-top:2px}
-.status{min-height:16px;text-align:center;font-size:clamp(10px,2.6vw,12px);font-weight:bold;color:#4c260d;margin-top:4px}
-.bottom-label{position:absolute;bottom:2.35%;left:7%;width:30%;height:3.3%;display:flex;align-items:center;justify-content:center;padding:0;border:0;background:transparent;appearance:none;-webkit-appearance:none;color:#f2d27d;text-shadow:0 1px 2px #000;font:800 clamp(9px,2.5vw,13px) "Cinzel",Georgia,serif;cursor:pointer;line-height:1;z-index:3}
-.send{position:absolute;bottom:2.35%;right:7%;width:30%;height:3.3%;border:0;background:transparent;appearance:none;-webkit-appearance:none;color:#f2d27d;text-shadow:0 1px 2px #000;font:800 clamp(9px,2.5vw,13px) "Cinzel",Georgia,serif;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;line-height:1;z-index:3}
-.send:disabled{opacity:.45;cursor:not-allowed}
-@media(max-height:650px){body{padding:3px}.game-window{width:min(94vw,calc((100svh - 6px)*.6667))}.paper-content{padding-top:1%}p{margin-bottom:2%}.section-title{margin-top:2%;}.reward-icon{width:29px;height:29px;flex-basis:29px}.option{min-height:32px;margin:3px 0;padding:3px 6px}.option .icon{font-size:18px}.subtitle{margin-bottom:2.5%}.status{min-height:12px}}
+html,body{margin:0;min-height:100%;background:var(--cream)}
+body{min-height:100svh;display:grid;place-items:center;padding:18px 14px;color:var(--ink);font-family:Nunito,system-ui,sans-serif;background:radial-gradient(ellipse at 10% 5%,#ffe9e3 0,transparent 35%),radial-gradient(ellipse at 95% 90%,#f9e6d5 0,transparent 36%),#fff8f3}
+.wrap{width:min(100%,430px)}
+.card{padding:clamp(22px,5.5vw,32px);background:rgba(255,255,255,.74);border:1px solid #f4e3dd;border-radius:28px;box-shadow:0 14px 40px #9c665012;overflow:hidden}
+.heart-top{text-align:center;color:#e68d91;font-size:27px;line-height:1;margin:0 0 10px}
+h1{margin:0;text-align:center;font:700 clamp(28px,7.4vw,37px)/1.12 Quicksand,Nunito,sans-serif;letter-spacing:-.045em;color:#60392f}
+.cats{display:block;width:min(76%,250px);height:auto;margin:12px auto 12px}
+.prompt{font:700 clamp(16px,4.2vw,19px)/1.45 Quicksand,Nunito,sans-serif;text-align:center;margin:0 0 6px}
+.support{font-size:14px;line-height:1.45;text-align:center;color:#9b7b70;margin:0 auto 20px;max-width:320px}
+.options{display:grid;gap:10px}
+.option{display:flex;align-items:center;gap:12px;width:100%;min-height:68px;padding:12px 14px;border:1.5px solid var(--line);border-radius:18px;background:#fffdfb;color:var(--ink);text-align:left;cursor:pointer;box-shadow:0 3px 8px #784b3906;transition:border-color .15s,background .15s,transform .15s,box-shadow .15s;font:inherit}
+.option:hover{transform:translateY(-1px);border-color:#e9b8b4}
+.option.selected{background:#fff0ef;border-color:#df9698;box-shadow:0 0 0 3px #f9e2df}
+.option:focus-visible,.submit:focus-visible{outline:3px solid #d98288;outline-offset:2px}
+.option-icon{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;border-radius:14px;background:#fff0ee;font-size:23px}
+.option:nth-child(2) .option-icon{background:#fff5e7}
+.option-copy{flex:1}
+.option-title{display:block;font:700 16px/1.25 Quicksand,Nunito,sans-serif}
+.option-desc{display:block;margin-top:3px;font-size:12px;color:#a17c71;line-height:1.3}
+.radio{width:18px;height:18px;flex:0 0 18px;border:1.5px solid #e0b8b1;border-radius:50%;display:grid;place-items:center}
+.selected .radio{border-color:#cb777d;background:#cb777d}
+.selected .radio:after{content:"";width:6px;height:6px;border-radius:50%;background:white}
+.submit{width:100%;min-height:48px;margin-top:14px;border:0;border-radius:16px;background:#dca0a0;color:white;font:700 15px Quicksand,Nunito,sans-serif;box-shadow:0 5px 12px #cb8b8b20;cursor:pointer;transition:transform .15s,background .15s}
+.submit:not(:disabled){background:linear-gradient(135deg,#d98288,#c86e7a)}
+.submit:not(:disabled):hover{transform:translateY(-1px)}
+.submit:disabled{cursor:not-allowed;opacity:.72}
+.status{min-height:19px;margin-top:9px;text-align:center;font-size:13px;color:#a25e65;font-weight:700}
+.foot{margin:10px 0 0;text-align:center;font-size:12px;color:#b18d82;font-style:italic}
+@media(max-height:760px){body{padding-top:9px;padding-bottom:9px}.card{padding-top:19px;padding-bottom:19px}.heart-top{font-size:22px;margin-bottom:7px}.cats{width:min(67%,205px);margin:7px auto 8px}.support{margin-bottom:14px}.option{min-height:59px;padding:9px 12px}.foot{margin-top:5px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<main class="game-window" aria-label="Weekend Quest">
- <div class="npc-name">Weekend Quest</div>
- <div class="title">A Weekend Together?</div>
- <section class="paper-content">
+<main class="wrap">
+ <section class="card">
+  <div class="heart-top" aria-hidden="true">♥</div>
   <h1>A Weekend Together?</h1>
-  <div class="subtitle">A small quest for us ♡</div>
-  <p>Har du lyst til å møtes denne helgen?<br>Velg det som passer best for deg. ♡</p>
-  <p>Det er helt opp til deg, og begge svar er helt fine. Det viktigste er at du har det bra. ♥</p>
-  <div class="section-title">Quest Objectives</div>
-  <p>Velg ett alternativ:</p>
-  <button class="option" data-value="meet"><span class="icon">💞</span><span><b>Ja, la oss møtes!</b><small>Vi finner et tidspunkt sammen.</small></span></button>
-  <button class="option alt" data-value="rest"><span class="icon">🌙</span><span><b>Ikke denne helgen</b><small>Vi tar det en annen gang.</small></span></button>
-  <div class="section-title">Rewards</div>
-  <div class="reward"><div class="reward-icon">💗</div><div><b>Mer tid sammen</b>En hyggelig helg med fine minner.</div></div>
+  <img class="cats" src="cats.png" alt="To søte katter som ligger tett sammen">
+  <p class="prompt">Har du lyst til å møtes denne helgen?</p>
+  <p class="support">Velg det som passer best for deg. ♡</p>
+  <div class="options">
+   <button class="option" type="button" data-value="meet">
+    <span class="option-icon">💗</span><span class="option-copy"><span class="option-title">Ja, la oss møtes!</span><span class="option-desc">Vi finner et tidspunkt sammen. ♡</span></span><span class="radio"></span>
+   </button>
+   <button class="option" type="button" data-value="rest">
+    <span class="option-icon">🌙</span><span class="option-copy"><span class="option-title">Ikke denne helgen</span><span class="option-desc">Vi tar det en annen gang. ♡</span></span><span class="radio"></span>
+   </button>
+  </div>
+  <button class="submit" id="send" type="button" disabled>Send inn svaret ♡</button>
   <div class="status" id="status" role="status" aria-live="polite"></div>
+  <p class="foot">Uansett hva du velger, gleder jeg meg til neste gang. ♡</p>
  </section>
- <button class="bottom-label" id="decline" type="button">Decline</button>
- <button class="send" id="send" disabled>Accept</button>
 </main>
 <script>
 const CONFIG={supabaseUrl:'https://ghtzhnjmgsrqxnocvuwn.supabase.co',supabaseAnonKey:'sb_publishable_-V7bEzUED52q-lumtLL67w_IzzwlLzv'};
 let selected=null;
-const status=document.getElementById('status'),send=document.getElementById('send'),decline=document.getElementById('decline');
-decline.addEventListener('click',()=>{selected=null;document.querySelectorAll('.option').forEach(x=>{x.classList.remove('selected');x.disabled=false;});send.disabled=true;status.textContent='';});
+const status=document.getElementById('status'),send=document.getElementById('send');
 document.querySelectorAll('.option').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.value;document.querySelectorAll('.option').forEach(x=>x.classList.toggle('selected',x===b));send.disabled=false;status.textContent='';}));
-send.addEventListener('click',async()=>{if(!selected)return;send.disabled=true;status.textContent='Saving…';try{const response=await fetch(CONFIG.supabaseUrl+'/rest/v1/rpc/submit_weekend_vote',{method:'POST',headers:{'apikey':CONFIG.supabaseAnonKey,'Authorization':'Bearer '+CONFIG.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({p_choice:selected})});if(!response.ok)throw Error('save failed');status.textContent=selected==='meet'?'Quest accepted! ♥':'Rest quest accepted! 🌙';document.querySelectorAll('.option').forEach(x=>x.disabled=true);}catch(e){status.textContent='Kunne ikke lagre svaret. Prøv igjen.';send.disabled=false;}});
+send.addEventListener('click',async()=>{if(!selected)return;send.disabled=true;status.textContent='Sender svaret…';try{const response=await fetch(CONFIG.supabaseUrl+'/rest/v1/rpc/submit_weekend_vote',{method:'POST',headers:{'apikey':CONFIG.supabaseAnonKey,'Authorization':'Bearer '+CONFIG.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({p_choice:selected})});if(!response.ok)throw Error('save failed');status.textContent=selected==='meet'?'Så koselig! ♡':'Det er helt i orden. Vi finner en annen dag. ♡';document.querySelectorAll('.option').forEach(x=>x.disabled=true);}catch(e){status.textContent='Kunne ikke sende svaret. Prøv igjen.';send.disabled=false;}});
 </script>
 </body>
 </html>
