@@ -6,18 +6,19 @@
 <meta name="theme-color" content="#151311">
 <title>Weekend Quest</title>
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=IM+Fell+English:ital@0;1&display=swap");
 *{box-sizing:border-box}
 :root{--ink:#25170c;--gold:#e7bf65;--red:#6e0808}
 html,body{margin:0;min-height:100%;background:#100e0c}
-body{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:8px;background:radial-gradient(ellipse at center,#3b3024,#100e0c 76%);font-family:Georgia,"Times New Roman",serif}
+body{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:8px;background:radial-gradient(ellipse at center,#3b3024,#100e0c 76%);font-family:"IM Fell English",Georgia,"Times New Roman",serif}
 .game-window{position:relative;width:min(94vw,calc((100svh - 16px)*.6667));aspect-ratio:2/3;background:url("quest-frame.png") center/100% 100% no-repeat;filter:drop-shadow(0 10px 22px #000b)}
-.npc-name{position:absolute;top:2.1%;left:23%;width:57%;height:3.4%;display:flex;align-items:center;justify-content:center;color:#ddd0b6;font:clamp(9px,2.6vw,14px) Georgia,serif;text-shadow:0 1px 2px #000;white-space:nowrap;overflow:hidden}
-.title{position:absolute;top:7.3%;left:7.7%;width:84%;height:5.3%;display:flex;align-items:center;justify-content:center;color:#f0c96e;font:700 clamp(12px,3.7vw,19px) Georgia,serif;text-shadow:1px 2px 1px #281508;text-align:center}
+.npc-name{position:absolute;top:1.75%;left:23%;width:57%;height:3.4%;display:flex;align-items:center;justify-content:center;color:#ddd0b6;font:600 clamp(9px,2.5vw,13px) "Cinzel",Georgia,serif;text-shadow:0 1px 2px #000;white-space:nowrap;overflow:hidden}
+.title{position:absolute;top:7.3%;left:7.7%;width:84%;height:5.3%;display:flex;align-items:center;justify-content:center;color:#f0c96e;font:800 clamp(12px,3.7vw,19px) "Cinzel",Georgia,serif;text-shadow:1px 2px 1px #281508;text-align:center}
 .paper-content{position:absolute;top:14.6%;left:7.8%;width:83.6%;height:76.7%;padding:1.5% 2.5% 1%;color:var(--ink);overflow:auto;scrollbar-width:thin;scrollbar-color:#82623c transparent}
-h1{font:700 clamp(17px,4.5vw,24px)/1.1 Georgia,serif;text-transform:uppercase;letter-spacing:.02em;margin:0 0 2.2%;color:#38200e}
+h1{font:800 clamp(17px,4.5vw,24px)/1.1 "Cinzel",Georgia,serif;text-transform:uppercase;letter-spacing:.02em;margin:0 0 2.2%;color:#38200e}
 .subtitle{font-style:italic;font-size:clamp(10px,2.7vw,13px);margin:0 0 4%}
 p{font-size:clamp(11px,3vw,15px);line-height:1.25;margin:0 0 3.2%}
-.section-title{font:700 clamp(13px,3.5vw,17px) Georgia,serif;text-transform:uppercase;margin:3.5% 0 1.5%;color:#42230d}
+.section-title{font:800 clamp(13px,3.5vw,17px) "Cinzel",Georgia,serif;text-transform:uppercase;margin:3.5% 0 1.5%;color:#42230d}
 .reward{display:flex;align-items:center;gap:8px;font-size:clamp(10px,2.7vw,13px);margin:1.5% 0 2.5%}
 .reward-icon{width:35px;height:35px;flex:0 0 35px;display:grid;place-items:center;background:linear-gradient(135deg,#3a2450,#130e1a);border:2px ridge #b9974d;border-radius:3px;font-size:21px;box-shadow:0 1px 2px #38220c}
 .reward b{display:block}
@@ -29,8 +30,8 @@ p{font-size:clamp(11px,3vw,15px);line-height:1.25;margin:0 0 3.2%}
 .option b{display:block;font-size:clamp(12px,3.4vw,16px);line-height:1.05}
 .option small{display:block;color:#e2d5bd;font-size:clamp(9px,2.4vw,11px);margin-top:2px}
 .status{min-height:16px;text-align:center;font-size:clamp(10px,2.6vw,12px);font-weight:bold;color:#4c260d;margin-top:4px}
-.bottom-label{position:absolute;bottom:2.2%;left:7%;width:34%;height:3.6%;display:flex;align-items:center;justify-content:center;color:#f2d27d;text-shadow:0 1px 2px #000;font:bold clamp(10px,2.8vw,14px) Georgia,serif}
-.send{position:absolute;bottom:2.2%;right:7%;width:31%;height:3.6%;border:0;background:transparent;color:#f2d27d;text-shadow:0 1px 2px #000;font:bold clamp(10px,2.8vw,14px) Georgia,serif;cursor:pointer}
+.bottom-label{position:absolute;bottom:3.05%;left:7%;width:34%;height:3.4%;display:flex;align-items:center;justify-content:center;color:#f2d27d;text-shadow:0 1px 2px #000;font:800 clamp(9px,2.5vw,13px) "Cinzel",Georgia,serif;pointer-events:none}
+.send{position:absolute;bottom:3.05%;right:7%;width:31%;height:3.4%;border:0;background:transparent;color:#f2d27d;text-shadow:0 1px 2px #000;font:800 clamp(9px,2.5vw,13px) "Cinzel",Georgia,serif;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0 0 1px}
 .send:disabled{opacity:.45;cursor:not-allowed}
 @media(max-height:650px){body{padding:3px}.game-window{width:min(94vw,calc((100svh - 6px)*.6667))}.paper-content{padding-top:1%}p{margin-bottom:2%}.section-title{margin-top:2%;}.reward-icon{width:29px;height:29px;flex-basis:29px}.option{min-height:32px;margin:3px 0;padding:3px 6px}.option .icon{font-size:18px}.subtitle{margin-bottom:2.5%}.status{min-height:12px}}
 </style>
@@ -52,13 +53,14 @@ p{font-size:clamp(11px,3vw,15px);line-height:1.25;margin:0 0 3.2%}
   <div class="reward"><div class="reward-icon">💗</div><div><b>Mer tid sammen</b>En hyggelig helg med fine minner.</div></div>
   <div class="status" id="status" role="status" aria-live="polite"></div>
  </section>
- <div class="bottom-label">Choose</div>
+ <button class="bottom-label" id="decline" type="button">Decline</button>
  <button class="send" id="send" disabled>Accept</button>
 </main>
 <script>
 const CONFIG={supabaseUrl:'https://ghtzhnjmgsrqxnocvuwn.supabase.co',supabaseAnonKey:'sb_publishable_-V7bEzUED52q-lumtLL67w_IzzwlLzv'};
 let selected=null;
-const status=document.getElementById('status'),send=document.getElementById('send');
+const status=document.getElementById('status'),send=document.getElementById('send'),decline=document.getElementById('decline');
+decline.addEventListener('click',()=>{selected=null;document.querySelectorAll('.option').forEach(x=>{x.classList.remove('selected');x.disabled=false;});send.disabled=true;status.textContent='';});
 document.querySelectorAll('.option').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.value;document.querySelectorAll('.option').forEach(x=>x.classList.toggle('selected',x===b));send.disabled=false;status.textContent='';}));
 send.addEventListener('click',async()=>{if(!selected)return;send.disabled=true;status.textContent='Saving…';try{const response=await fetch(CONFIG.supabaseUrl+'/rest/v1/rpc/submit_weekend_vote',{method:'POST',headers:{'apikey':CONFIG.supabaseAnonKey,'Authorization':'Bearer '+CONFIG.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({p_choice:selected})});if(!response.ok)throw Error('save failed');status.textContent=selected==='meet'?'Quest accepted! ♥':'Rest quest accepted! 🌙';document.querySelectorAll('.option').forEach(x=>x.disabled=true);}catch(e){status.textContent='Kunne ikke lagre svaret. Prøv igjen.';send.disabled=false;}});
 </script>
